@@ -11,19 +11,19 @@ class AnimalController extends Controller {
         $this->service = new AnimalService();
     }
 
-    // LISTAR (Acesso Público)
+    
     public function index() {
         $data['animais'] = $this->service->listar();
         $this->view('animais/animal_list', $data);
     }
 
-    // VER UM (Acesso Público)
+    
     public function visualizar() {
         $data['animal'] = $this->service->buscar($_GET['id']);
         $this->view('animais/animal_view', $data);
     }
 
-    // NOVO (Restrito)
+    
     public function cadastrar() {
         $this->view('animais/animal_create');
     }
